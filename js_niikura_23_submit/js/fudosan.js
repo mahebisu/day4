@@ -313,9 +313,9 @@ function kekkahyoji(dealapi){
 
                     // 乱数で表示位置をばらけさせる
                     let ransurad = Math.random() * Math.PI * 2;
-                    let anchor_yoko = results[0].geometry.location.lat() + 0.010966404715491394  * 0.8 * Math.cos(ransurad);
-                    let anchor_tate = results[0].geometry.location.lng() + 0.0090133729745762 * 0.8 * Math.sin(ransurad);
-                    let myLatLng = { lat: anchor_yoko, lng: anchor_tate };
+                    let anchor_tate = results[0].geometry.location.lat() + 0.0090133729745762  * 0.8 * Math.sin(ransurad);
+                    let anchor_yoko = results[0].geometry.location.lng() + 0.010966404715491394 * 0.8 * Math.cos(ransurad);
+                    let myLatLng = { lat: anchor_tate, lng: anchor_yoko };
                     console.log(myLatLng);
 
 
