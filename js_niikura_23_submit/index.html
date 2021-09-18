@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国交省の不動産データAPIを使ってみよう</title>
+    <!-- jqueryを読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <!-- googlemapsAPIからコピペ -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Noto fontをダウンロード -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet">
+</head>
+
+<body class="body">
+
+    <header id="title">
+        <h1>国交省の不動産データAPIを使ってみよう</h1>
+    </header>
+
+    <!-- 以下googlemapsAPIからコピペ（APIKEY入力済） -->
+        <div id="map">
+
+        </div>
+        <!-- googlemaps -->
+
+        <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=”APIKEY””APIKEY”&callback=initMap&libraries=&v=weekly"
+        ></script>
+
+        <!-- 以上googlemaps -->
+
+
+    <!-- 以上googlemapsAPIからコピペ -->
+
+    <section id="main">
+
+        <section id="selection">
+            <!-- 都道府県を選びましょう -->
+            <select name="" id="prefectures_select" size="10">
+                <option value="">都道府県を下記から選択してください</option>
+            </select>
+
+            <!-- 市町村を選びましょう -->
+            <select name="" id="shichosons_select" size="10">
+                <option value="">市町村を下記から選択してください</option>
+            </select>
+
+            <!-- 取引時期を選びましょう -->
+            <select name="" id="time_from" size="10">
+                <option value="">検索する取引年は西暦〇年から</option>
+            </select>
+
+            <select name="" id="time_to" size="10">
+                <option value="">西暦〇年まで</option>
+            </select>
+
+            <button id="button">表示</button>
+
+        </section>
+
+        
+        <!-- 取引データの表示 -->
+        <section id="dealdata_output">
+            <p>取引データ一覧（最大30件）</p>
+
+            <br>
+            <table>
+                <tr>
+                    <th>宅地（土地）</th>
+                    <th>宅地（土地と建物）</th>
+                    <th>中古マンション等</th>
+                    <th>農地</th>
+                    <th>林地</th>
+                </tr>
+                <tr>
+                    <td id="takuchi_output"></td>
+                    <td id="tatemono_output"></td>
+                    <td id="mansion_output"></td>
+                    <td id="nochi_output"></td>
+                    <td id="rinchi_output"></td>
+                </tr>
+
+
+
+            </table>
+
+        </section>
+
+    </section>
+
+
+
+    <footer class="footer">
+        <small>copyrights 2021 yattemiyo ltd All RIghts Reserved.ただし、不動産データ・市町村データに関しては「https://www.land.mlit.go.jp/webland/api.html」から引用.</small>
+    </footer>
+
+
+    <!-- webページが表示されるのを早くするために、一番最後にjavascriptを起動させる。 -->
+    <script src="js/fudosan.js"></script> 
+
+</body>
+</html>
